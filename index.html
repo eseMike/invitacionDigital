@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Boda Misael y Amanda</title>
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=DM+Sans&display=swap"
+         rel="stylesheet" />
+      <!-- AOS CSS -->
+      <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+      <!-- Lightbox2 CSS LOCAL -->
+      <link rel="stylesheet" href="lightbox/css/lightbox.min.css" />
+   </head>
+   <body>
+      <div id="loader">
+         <div class="spinner"></div>
+         <p>Cargando invitación...</p>
+      </div>
+
+      <!-- Sección 1: Portada -->
+      <section class="portada" data-aos="fade-down">
+         <img src="assets/MONOGRAMA.jpg" alt="Logo de la boda" class="logo-boda" />
+         <h1>Misael & Amanda</h1>
+         <p class="fecha">28 de Junio de 2025</p>
+      </section>
+
+      <!-- Sección 2: Música -->
+      <audio autoplay loop>
+         <source src="song.mp3" type="audio/mpeg" />
+         Tu navegador no soporta audio.
+      </audio>
+
+      <button id="audio-control" aria-label="Controlar música">⏸️</button>
+
+      <!-- Sección 3: Cuenta regresiva -->
+      <section class="countdown" data-aos="zoom-in">
+         <h2>Faltan...</h2>
+         <div id="contador"></div>
+      </section>
+
+      <!-- Sección 4: Ceremonia -->
+      <section class="ceremonia" data-aos="fade-up">
+         <h2>Ceremonia</h2>
+         <p>Iglesia Bautista Fundamental de México, A.R.</p>
+         <p>Viad. Pdte. Miguel Alemán Valdés 51, Col. Buenos Aires, CDMX</p>
+         <p>Sábado 28 de Junio de 2025 – 14:00 hrs</p>
+         <p class="leyenda">*Sugerencia: llegar 15 minutos antes*</p>
+      </section>
+
+      <!-- Sección 5: Comida -->
+      <section class="comida" data-aos="fade-up">
+         <h2>Comida de agradecimiento</h2>
+         <p>Rtn° 2 Calle Roberto Koch 22, Impi Picos, Iztacalco, CDMX</p>
+      </section>
+
+      <!-- Sección 6: Frase especial -->
+      <section class="frase" data-aos="fade-up" data-aos-delay="200">
+         <blockquote>
+            “Y si alguno prevaleciere contra uno, dos le resistirán; y cordón de tres
+            dobleces no se rompe pronto.”
+            <cite>– Eclesiastés 4:12</cite>
+         </blockquote>
+      </section>
+
+      <!-- Sección 7: Código de vestimenta -->
+      <section class="vestimenta" data-aos="fade-up">
+         <h2>Código de vestimenta</h2>
+         <p>Formal discreto</p>
+      </section>
+
+      <!-- Sección 8: Galería -->
+      <section class="galeria" data-aos="zoom-in-up">
+         <h2>Galería</h2>
+         <p class="galeria-nota">
+            Haz clic en una foto para ampliarla. Pulsa
+            <strong>Esc</strong>
+            o el botón ❌ para volver.
+         </p>
+
+         <div class="fotos">
+            <a href="assets/foto1.jpg" data-lightbox="galeria">
+               <img src="assets/foto1.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto2.jpg" data-lightbox="galeria">
+               <img src="assets/foto2.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto3.jpg" data-lightbox="galeria">
+               <img src="assets/foto3.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto4.jpg" data-lightbox="galeria">
+               <img src="assets/foto4.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto5.jpg" data-lightbox="galeria">
+               <img src="assets/foto5.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto6.jpg" data-lightbox="galeria">
+               <img src="assets/foto6.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto10.jpg" data-lightbox="galeria">
+               <img src="assets/foto10.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto11.jpg" data-lightbox="galeria">
+               <img src="assets/foto11.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto12.jpg" data-lightbox="galeria">
+               <img src="assets/foto12.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto13.jpg" data-lightbox="galeria">
+               <img src="assets/foto13.jpg" alt="Misael y Amanda" />
+            </a>
+            <a href="assets/foto14.jpg" data-lightbox="galeria">
+               <img src="assets/foto14.jpg" alt="Misael y Amanda" />
+            </a>
+         </div>
+      </section>
+
+      <!-- Sección 9: Ubicación -->
+      <section class="ubicacion" data-aos="fade-up">
+         <h2>Ubicación</h2>
+
+         <p>
+            <strong>Iglesia:</strong>
+            <a href="https://maps.app.goo.gl/Z2pR2Yg8WGYdThHC7" target="_blank">
+               Ver en Google Maps
+            </a>
+         </p>
+         <div class="mapa-centrado">
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.798702056055!2d-99.082455!3d19.3770019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce015aaa5cb2c5%3A0xf5f589e4fba7d151!2sParroquia%20de%20San%20Juan%20Evangelista!5e0!3m2!1ses-419!2smx!4v1716982309203!5m2!1ses-419!2smx"
+               width="300"
+               height="200"
+               style="border: 0"
+               allowfullscreen=""
+               loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+
+         <p>
+            <strong>Comida:</strong>
+            <a href="https://maps.app.goo.gl/1czyze8f5ukgG74vA" target="_blank">
+               Ver en Google Maps
+            </a>
+         </p>
+         <div class="mapa-centrado">
+            <iframe
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.7819513467253!2d-99.0823798!3d19.3776406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce015b8a70e421%3A0x2a1475406d179597!2sJard%C3%ADn%20de%20Fiestas%20Palma%20Real!5e0!3m2!1ses-419!2smx!4v1716982414700!5m2!1ses-419!2smx"
+               width="300"
+               height="200"
+               style="border: 0"
+               allowfullscreen=""
+               loading="lazy"
+               referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+      </section>
+
+      <!-- Sección 10: Confirmación -->
+      <section class="confirmacion" data-aos="fade-up">
+         <h2>Confirmación</h2>
+         <p>Confirma tu asistencia vía WhatsApp:</p>
+
+         <div class="whatsapp-link">
+            <a href="https://wa.me/5215512540493" target="_blank">
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 16 16">
+                  <path
+                     d="M13.601 2.326a7.872 7.872 0 0 0-11.201 0 7.872 7.872 0 0 0-1.63 8.534L.017 14.12a.43.43 0 0 0 .558.558l3.26-.753a7.872 7.872 0 0 0 8.534-1.63 7.872 7.872 0 0 0 0-11.2zM8 14.35a6.35 6.35 0 0 1-3.44-1.016.44.44 0 0 0-.282-.062l-2.2.508.508-2.2a.44.44 0 0 0-.062-.283 6.351 6.351 0 1 1 5.476 3.053zm3.033-4.725c-.166-.083-.982-.482-1.134-.537-.152-.055-.263-.083-.375.083s-.43.537-.527.65c-.097.11-.195.124-.36.041a5.178 5.178 0 0 1-1.522-.938 5.73 5.73 0 0 1-1.063-1.322c-.111-.194-.012-.299.083-.39.085-.084.194-.219.291-.33.097-.111.129-.194.194-.32.066-.125.03-.236-.013-.33-.041-.083-.375-.902-.514-1.237-.135-.324-.27-.28-.375-.285h-.32a.616.616 0 0 0-.445.207 1.87 1.87 0 0 0-.576 1.4c0 .194.033.389.097.571.194.537.61 1.183 1.388 2.082.986 1.142 2.365 1.884 3.392 2.102.237.05.421.083.573.083h.014c.19 0 .608-.211.694-.415.086-.202.086-.377.06-.415-.025-.041-.152-.097-.318-.18z" />
+               </svg>
+               5512540493
+            </a>
+         </div>
+
+         <div class="whatsapp-link">
+            <a href="https://wa.me/5215530588135" target="_blank">
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 16 16">
+                  <path
+                     d="M13.601 2.326a7.872 7.872 0 0 0-11.201 0 7.872 7.872 0 0 0-1.63 8.534L.017 14.12a.43.43 0 0 0 .558.558l3.26-.753a7.872 7.872 0 0 0 8.534-1.63 7.872 7.872 0 0 0 0-11.2zM8 14.35a6.35 6.35 0 0 1-3.44-1.016.44.44 0 0 0-.282-.062l-2.2.508.508-2.2a.44.44 0 0 0-.062-.283 6.351 6.351 0 1 1 5.476 3.053zm3.033-4.725c-.166-.083-.982-.482-1.134-.537-.152-.055-.263-.083-.375.083s-.43.537-.527.65c-.097.11-.195.124-.36.041a5.178 5.178 0 0 1-1.522-.938 5.73 5.73 0 0 1-1.063-1.322c-.111-.194-.012-.299.083-.39.085-.084.194-.219.291-.33.097-.111.129-.194.194-.32.066-.125.03-.236-.013-.33-.041-.083-.375-.902-.514-1.237-.135-.324-.27-.28-.375-.285h-.32a.616.616 0 0 0-.445.207 1.87 1.87 0 0 0-.576 1.4c0 .194.033.389.097.571.194.537.61 1.183 1.388 2.082.986 1.142 2.365 1.884 3.392 2.102.237.05.421.083.573.083h.014c.19 0 .608-.211.694-.415.086-.202.086-.377.06-.415-.025-.041-.152-.097-.318-.18z" />
+               </svg>
+               5530588135
+            </a>
+         </div>
+      </section>
+
+      <footer data-aos="fade-up">
+         <p>Gracias por acompañarnos en este día tan especial 💛</p>
+      </footer>
+
+      <!-- Tu JS personalizado -->
+      <script src="script.js"></script>
+
+      <!-- AOS Animations -->
+      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+      <script>
+         AOS.init({
+            duration: 1000,
+            once: true,
+         });
+      </script>
+
+      <!-- Lightbox2 (solo local, no CDN duplicado) -->
+      <script src="./lightbox/js/lightbox-plus-jquery.min.js"></script>
+      <script>
+         if (typeof lightbox !== 'undefined') {
+            lightbox.option({
+               resizeDuration: 300,
+               wrapAround: true,
+               fadeDuration: 300,
+               imageFadeDuration: 300,
+               alwaysShowNavOnTouchDevices: true,
+            });
+         } else {
+            console.error('Lightbox no está definido. Revisa la ruta del script.');
+         }
+      </script>
+   </body>
+</html>
