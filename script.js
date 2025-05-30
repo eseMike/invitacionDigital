@@ -79,3 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
    document.addEventListener('touchstart', activarAudio);
    document.addEventListener('click', activarAudio);
 });
+
+// Activar música desde el botón "Iniciar experiencia"
+document.addEventListener('DOMContentLoaded', function () {
+   const overlay = document.getElementById('inicio-overlay');
+   const iniciarBtn = document.getElementById('iniciar-btn');
+   const audio = document.getElementById('audio');
+   const mensajeMusica = document.getElementById('mensaje-musica');
+
+   iniciarBtn.addEventListener('click', function () {
+      audio
+         .play()
+         .then(() => {
+            mensajeMusica.style.opacity = '1';
+            setTimeout(() => {
+               mensajeMusica.style.opacity = '0';
+            }, 2500);
+         })
+         .catch((err) => {
+            console.warn('Error al reproducir audio:', err);
+         });
+
+      overlay.style.display = 'none'; // Oculta el overlay
+   });
+});

@@ -21,8 +21,9 @@ body {
 $gold: #bfa76f;
 $dark: #222;
 $light: #f9f9f9;
-// $emerald: #2ecc71; // 💚 Verde esmeralda
-$emerald: #014421; // Verde oscuro profundo
+$esmeralda: #014421; // Verde oscuro profundo
+// $emeralda: #2ecc71; // 💚 Verde esmeralda
+$emeralda: #014421; // Verde oscuro profundo
 
 /* Sección Portada */
 .portada {
@@ -92,7 +93,7 @@ section {
    margin: auto;
 
    h2 {
-      color: $emerald; // 💚 cambio visual para probar
+      color: $emeralda; // 💚 cambio visual para probar
       font-size: 2rem;
       margin-bottom: 15px;
       text-align: center;
@@ -107,7 +108,7 @@ section {
 
    blockquote {
       font-style: italic;
-      color: $emerald; // 💚 también aquí
+      color: $emeralda; // 💚 también aquí
    }
 
    cite {
@@ -141,7 +142,7 @@ section {
 
             img {
                width: 100%;
-               border: 4px solid $emerald; // 💚 borde esmeralda
+               border: 4px solid $emeralda; // 💚 borde esmeralda
                border-radius: 10px;
                object-fit: cover;
             }
@@ -149,7 +150,7 @@ section {
       }
 
       .slider-btn {
-         background-color: $emerald; // 💚 flechas
+         background-color: $emeralda; // 💚 flechas
          color: white;
          border: none;
          font-size: 24px;
@@ -167,7 +168,7 @@ section {
          }
 
          &:hover {
-            background-color: darken($emerald, 10%);
+            background-color: darken($emeralda, 10%);
          }
       }
    }
@@ -307,7 +308,7 @@ body.loaded #loader {
    position: fixed;
    bottom: 20px;
    right: 20px;
-   background-color: $emerald; // 💚 color de botón música
+   background-color: $emeralda; // 💚 color de botón música
    color: white;
    border: none;
    border-radius: 50%;
@@ -320,7 +321,7 @@ body.loaded #loader {
    transition: background-color 0.3s ease;
 
    &:hover {
-      background-color: darken($emerald, 10%);
+      background-color: darken($emeralda, 10%);
    }
 }
 
@@ -382,6 +383,97 @@ body.loaded #loader {
    bottom: 80px;
    right: 20px;
    background-color: rgba(1, 68, 33, 0.95); // fondo verde oscuro semitransparente
+   color: white;
+   padding: 10px 20px;
+   border-radius: 20px;
+   font-size: 1rem;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 0.5s ease;
+   z-index: 9999;
+}
+
+#inicio-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background: rgba(255, 255, 255, 0.95);
+   z-index: 9999;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   padding: 20px;
+}
+
+.overlay-contenido p {
+   font-size: 1.4rem;
+   margin-bottom: 20px;
+   color: #444;
+}
+
+#iniciar-btn {
+   background-color: $esmeralda; // Usa tu variable
+   color: white;
+   border: none;
+   padding: 12px 24px;
+   font-size: 1rem;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+#iniciar-btn:hover {
+   background-color: darken($esmeralda, 10%);
+}
+
+/* Overlay de inicio */
+#inicio-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background: rgba(255, 255, 255, 0.95);
+   z-index: 9999;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   padding: 20px;
+}
+
+.overlay-contenido p {
+   font-size: 1.4rem;
+   margin-bottom: 20px;
+   color: #444;
+}
+
+#iniciar-btn {
+   background-color: $esmeralda;
+   color: white;
+   border: none;
+   padding: 12px 24px;
+   font-size: 1rem;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+#iniciar-btn:hover {
+   background-color: darken($esmeralda, 10%);
+}
+
+/* Mensaje de música activada */
+#mensaje-musica {
+   position: fixed;
+   bottom: 80px;
+   right: 20px;
+   background-color: rgba(1, 68, 33, 0.95);
    color: white;
    padding: 10px 20px;
    border-radius: 20px;
