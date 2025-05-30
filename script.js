@@ -54,3 +54,30 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
    slider.scrollBy({left: 300, behavior: 'smooth'});
 });
+
+// Activar audio al primer toque o clic
+document.addEventListener('DOMContentLoaded', function () {
+   const audio = document.getElementById('audio');
+   const mensajeMusica = document.getElementById('mensaje-musica');
+
+   const activarAudio = () => {
+      audio
+         .play()
+         .then(() => {
+            // Mostrar mensaje
+            mensajeMusica.style.opacity = '1';
+            setTimeout(() => {
+               mensajeMusica.style.opacity = '0';
+            }, 2500);
+         })
+         .catch((e) => {
+            console.warn('Autoplay bloqueado por el navegador:', e);
+         });
+
+      document.removeEventListener('touchstart', activarAudio);
+      document.removeEventListener('click', activarAudio);
+   };
+
+   document.addEventListener('touchstart', activarAudio);
+   document.addEventListener('click', activarAudio);
+});
