@@ -41,3 +41,16 @@ audioBtn.addEventListener('click', () => {
       audioBtn.textContent = '▶️'; // Mostrar play
    }
 });
+
+// Slider galería
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+const slider = document.querySelector('.slider-fotos');
+
+prevBtn.addEventListener('click', () => {
+   slider.scrollBy({left: -300, behavior: 'smooth'});
+});
+
+nextBtn.addEventListener('click', () => {
+   slider.scrollBy({left: 300, behavior: 'smooth'});
+});
