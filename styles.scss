@@ -21,17 +21,18 @@ body {
 $gold: #bfa76f;
 $dark: #222;
 $light: #f9f9f9;
+$emerald: #2ecc71; // 💚 Verde esmeralda
 
 /* Sección Portada */
 .portada {
    background: $light;
    text-align: center;
    padding: 60px 20px;
-   width: 100%; // 🔥 que ocupe todo el ancho
-   margin: 0; // quitar posibles márgenes
+   width: 100%;
+   margin: 0;
 
    .logo-boda {
-      max-width: 180px; // 🔥 antes estaba en 120px
+      max-width: 180px;
       margin-bottom: 20px;
       display: block;
       margin-left: auto;
@@ -53,22 +54,21 @@ $light: #f9f9f9;
 
 /* Cuenta regresiva */
 .countdown {
-   // background: $gold;
    color: white;
    text-align: center;
    padding: 40px 20px;
-   width: 100%; // 🔥 ancho completo
-   margin: 0;
+   width: 100%;
    background-image: url(assets/foto4.jpg);
    background-size: cover;
-   width: 100%;
    height: 500px;
    background-position: center;
    background-repeat: no-repeat;
+
    h2 {
       font-size: 3rem;
       margin-bottom: 10px;
       color: white;
+
       @media (min-width: 768px) {
          font-size: 5rem;
       }
@@ -77,6 +77,7 @@ $light: #f9f9f9;
    #contador {
       font-size: 2rem;
       letter-spacing: 2px;
+
       @media (min-width: 768px) {
          font-size: 3.5rem;
       }
@@ -90,7 +91,7 @@ section {
    margin: auto;
 
    h2 {
-      color: $gold;
+      color: $emerald; // 💚 cambio visual para probar
       font-size: 2rem;
       margin-bottom: 15px;
       text-align: center;
@@ -105,7 +106,7 @@ section {
 
    blockquote {
       font-style: italic;
-      color: $dark;
+      color: $emerald; // 💚 también aquí
    }
 
    cite {
@@ -113,6 +114,7 @@ section {
       color: #777;
    }
 }
+
 /* Galería como slider */
 .galeria {
    text-align: center;
@@ -138,7 +140,7 @@ section {
 
             img {
                width: 100%;
-               border: 4px solid $gold;
+               border: 4px solid $emerald; // 💚 borde esmeralda
                border-radius: 10px;
                object-fit: cover;
             }
@@ -146,7 +148,7 @@ section {
       }
 
       .slider-btn {
-         background-color: $gold;
+         background-color: $emerald; // 💚 flechas
          color: white;
          border: none;
          font-size: 24px;
@@ -164,7 +166,7 @@ section {
          }
 
          &:hover {
-            background-color: darken($gold, 10%);
+            background-color: darken($emerald, 10%);
          }
       }
    }
@@ -211,6 +213,7 @@ section {
          padding: 10px 15px;
          border-radius: 8px;
          transition: all 0.3s ease;
+
          svg {
             flex-shrink: 0;
             color: $gold;
@@ -229,7 +232,7 @@ section {
       }
    }
 }
-/* Footer */
+
 /* Footer */
 footer {
    text-align: center;
@@ -244,7 +247,7 @@ footer {
    }
 
    .iniciales {
-      font-size: 3rem; // bien grande como lo pidió
+      font-size: 3rem;
       font-weight: bold;
       color: $gold;
       letter-spacing: 3px;
@@ -270,7 +273,7 @@ footer {
 
    p {
       margin-top: 15px;
-      color: #bfa76f;
+      color: $gold;
       font-size: 1.2rem;
       letter-spacing: 1px;
    }
@@ -278,7 +281,7 @@ footer {
 
 .spinner {
    border: 4px solid #eee;
-   border-top: 4px solid #bfa76f;
+   border-top: 4px solid $gold;
    border-radius: 50%;
    width: 60px;
    height: 60px;
@@ -303,7 +306,7 @@ body.loaded #loader {
    position: fixed;
    bottom: 20px;
    right: 20px;
-   background-color: #bfa76f;
+   background-color: $emerald; // 💚 color de botón música
    color: white;
    border: none;
    border-radius: 50%;
@@ -316,7 +319,7 @@ body.loaded #loader {
    transition: background-color 0.3s ease;
 
    &:hover {
-      background-color: #a8905b;
+      background-color: darken($emerald, 10%);
    }
 }
 
@@ -333,7 +336,7 @@ body.loaded #loader {
    }
 }
 
-/* Asegurar que el botón cerrar de Lightbox siempre esté visible */
+/* Lightbox botón cerrar */
 .lb-close {
    position: absolute !important;
    top: 20px !important;
