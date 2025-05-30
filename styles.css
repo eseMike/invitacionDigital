@@ -211,12 +211,23 @@ section cite {
 }
 
 /* Footer */
+/* Footer */
 footer {
   text-align: center;
   background: #f9f9f9;
   padding: 30px 20px;
-  font-size: 1.2rem;
   color: #555;
+}
+footer .agradecimiento {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+footer .iniciales {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #bfa76f;
+  letter-spacing: 3px;
 }
 
 #loader {

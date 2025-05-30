@@ -230,12 +230,25 @@ section {
    }
 }
 /* Footer */
+/* Footer */
 footer {
    text-align: center;
    background: $light;
    padding: 30px 20px;
-   font-size: 1.2rem; // 🔥 antes 0.9rem
-   color: #555; // un poco más oscuro para mejor visibilidad
+   color: #555;
+
+   .agradecimiento {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+   }
+
+   .iniciales {
+      font-size: 3rem; // bien grande como lo pidió
+      font-weight: bold;
+      color: $gold;
+      letter-spacing: 3px;
+   }
 }
 
 #loader {
