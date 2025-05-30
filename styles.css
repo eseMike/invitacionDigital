@@ -345,7 +345,7 @@ body.loaded #loader {
   position: fixed;
   bottom: 80px;
   right: 20px;
-  background-color: rgba(1, 68, 33, 0.9);
+  background-color: rgba(1, 68, 33, 0.95);
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -353,5 +353,5 @@ body.loaded #loader {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
-  z-index: 999;
+  z-index: 9999;
 }/*# sourceMappingURL=styles.css.map */
