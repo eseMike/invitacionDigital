@@ -84,7 +84,7 @@ section {
   margin: auto;
 }
 section h2 {
-  color: #2ecc71;
+  color: #014421;
   font-size: 2rem;
   margin-bottom: 15px;
   text-align: center;
@@ -97,7 +97,7 @@ section cite {
 }
 section blockquote {
   font-style: italic;
-  color: #2ecc71;
+  color: #014421;
 }
 section cite {
   font-size: 0.9rem;
@@ -129,13 +129,13 @@ section cite {
 }
 .galeria .slider-galeria .slider-fotos a img {
   width: 100%;
-  border: 4px solid #2ecc71;
+  border: 4px solid #014421;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .galeria .slider-galeria .slider-btn {
-  background-color: #2ecc71;
+  background-color: #014421;
   color: white;
   border: none;
   font-size: 24px;
@@ -151,7 +151,7 @@ section cite {
   margin-left: 10px;
 }
 .galeria .slider-galeria .slider-btn:hover {
-  background-color: #25a25a;
+  background-color: #001209;
 }
 
 /* Confirmación y Ubicación */
@@ -275,7 +275,7 @@ body.loaded #loader {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #2ecc71;
+  background-color: #014421;
   color: white;
   border: none;
   border-radius: 50%;
@@ -288,7 +288,7 @@ body.loaded #loader {
   transition: background-color 0.3s ease;
 }
 #audio-control:hover {
-  background-color: #25a25a;
+  background-color: #001209;
 }
 
 @media (max-width: 768px) {
