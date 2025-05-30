@@ -23,48 +23,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
    actualizarContador();
    setInterval(actualizarContador, 1000);
-});
 
-window.addEventListener('load', () => {
-   document.body.classList.add('loaded');
-});
+   // Mostrar loader
+   window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+   });
 
-const audio = document.querySelector('audio');
-const audioBtn = document.getElementById('audio-control');
-
-audioBtn.addEventListener('click', () => {
-   if (audio.paused) {
-      audio.play();
-      audioBtn.textContent = '⏸️'; // Mostrar pausa
-   } else {
-      audio.pause();
-      audioBtn.textContent = '▶️'; // Mostrar play
-   }
-});
-
-// Slider galería
-const prevBtn = document.querySelector('.slider-btn.prev');
-const nextBtn = document.querySelector('.slider-btn.next');
-const slider = document.querySelector('.slider-fotos');
-
-prevBtn.addEventListener('click', () => {
-   slider.scrollBy({left: -300, behavior: 'smooth'});
-});
-
-nextBtn.addEventListener('click', () => {
-   slider.scrollBy({left: 300, behavior: 'smooth'});
-});
-
-// Activar audio al primer toque o clic
-document.addEventListener('DOMContentLoaded', function () {
+   // Control manual de música
    const audio = document.getElementById('audio');
+   const audioBtn = document.getElementById('audio-control');
+
+   audioBtn.addEventListener('click', () => {
+      if (audio.paused) {
+         audio.play();
+         audioBtn.textContent = '⏸️';
+      } else {
+         audio.pause();
+         audioBtn.textContent = '▶️';
+      }
+   });
+
+   // Slider galería
+   const prevBtn = document.querySelector('.slider-btn.prev');
+   const nextBtn = document.querySelector('.slider-btn.next');
+   const slider = document.querySelector('.slider-fotos');
+
+   prevBtn?.addEventListener('click', () => {
+      slider.scrollBy({left: -300, behavior: 'smooth'});
+   });
+
+   nextBtn?.addEventListener('click', () => {
+      slider.scrollBy({left: 300, behavior: 'smooth'});
+   });
+
+   // Activar audio con primer toque
    const mensajeMusica = document.getElementById('mensaje-musica');
 
    const activarAudio = () => {
       audio
          .play()
          .then(() => {
-            // Mostrar mensaje
             mensajeMusica.style.opacity = '1';
             setTimeout(() => {
                mensajeMusica.style.opacity = '0';
