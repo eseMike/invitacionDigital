@@ -109,6 +109,10 @@ section {
    blockquote {
       font-style: italic;
       color: $emeralda; // 💚 también aquí
+      font-size: 1.6rem;
+      @media (min-width: 768px) {
+         font-size: 2rem;
+      }
    }
 
    cite {
@@ -243,13 +247,13 @@ footer {
    color: #555;
 
    .agradecimiento {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin-bottom: 25px;
       line-height: 1.6;
    }
 
    .iniciales {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: bold;
       color: $gold;
       letter-spacing: 3px;

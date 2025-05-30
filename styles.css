@@ -98,6 +98,12 @@ section cite {
 section blockquote {
   font-style: italic;
   color: #014421;
+  font-size: 1.6rem;
+}
+@media (min-width: 768px) {
+  section blockquote {
+    font-size: 2rem;
+  }
 }
 section cite {
   font-size: 0.9rem;
@@ -216,12 +222,12 @@ footer {
   color: #555;
 }
 footer .agradecimiento {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 25px;
   line-height: 1.6;
 }
 footer .iniciales {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
   color: #bfa76f;
   letter-spacing: 3px;
