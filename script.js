@@ -85,18 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
    const overlay = document.getElementById('inicio-overlay');
    const iniciarBtn = document.getElementById('iniciar-btn');
 
-   if (iniciarBtn && overlay) {
-      iniciarBtn.addEventListener('click', () => {
-         overlay.style.transition = 'opacity 0.8s ease';
-         overlay.style.opacity = '0';
-         overlay.style.pointerEvents = 'none';
+   iniciarBtn.addEventListener('click', () => {
+      // Desaparece overlay con transición suave
+      overlay.style.transition = 'opacity 0.8s ease';
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
 
-         setTimeout(() => {
-            AOS.init({
-               duration: 1500,
-               once: true,
-            });
-         }, 800);
-      });
-   }
+      // Esperamos a que el overlay termine su animación
+      setTimeout(() => {
+         // Reinicializa AOS para que se apliquen las animaciones visibles ahora
+         AOS.refreshHard();
+      }, 800);
+   });
 });
