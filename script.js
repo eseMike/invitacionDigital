@@ -28,22 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
 
-         // Elimina el loader después de la transición
          const loader = document.getElementById('loader');
          if (loader) loader.remove();
-
-         // Asegura que los elementos se vean
-         document.querySelectorAll('section').forEach((el) => {
-            el.style.opacity = '1';
-            el.style.visibility = 'visible';
-         });
-
-         // Por si algo carga lento, lanza AOS
-         AOS.refreshHard();
-      }, 1500);
+      }, 1500); // Puedes ajustar este tiempo si lo deseas
    });
 
-   // Audio
+   // Control de audio
    const audio = document.getElementById('audio');
    const audioBtn = document.getElementById('audio-control');
    const mensajeMusica = document.getElementById('mensaje-musica');
@@ -99,22 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
    const iniciarBtn = document.getElementById('iniciar-btn');
 
    iniciarBtn.addEventListener('click', () => {
-      // Desaparece el overlay visual y funcionalmente
       overlay.style.transition = 'opacity 0.8s ease';
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
 
-      // Luego lo ocultamos completamente del DOM visual
+      // Activa el scroll por si estaba bloqueado
+      document.body.style.overflow = 'auto';
+
       setTimeout(() => {
          overlay.style.display = 'none';
 
-         // Refrescamos visibilidad por si alguna sección sigue invisible
-         document.querySelectorAll('section').forEach((el) => {
-            el.style.opacity = '1';
-            el.style.visibility = 'visible';
-         });
-
-         // Y lanzamos las animaciones AOS
+         // Refresca AOS para que se activen animaciones
          AOS.refreshHard();
       }, 800);
    });
