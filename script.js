@@ -23,14 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
    actualizarContador();
    setInterval(actualizarContador, 1000);
 
-   // Mostrar loader y eliminarlo del DOM después
+   // Mostrar loader y eliminarlo del DOM
    window.addEventListener('load', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
-
          const loader = document.getElementById('loader');
          if (loader) loader.remove();
-      }, 1500); // Puedes ajustar este tiempo si lo deseas
+      }, 1500);
    });
 
    // Control de audio
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    });
 
-   // Activar audio en primer toque
    const activarAudio = () => {
       audio
          .play()
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2500);
          })
          .catch((e) => {
-            console.warn('Autoplay bloqueado por el navegador:', e);
+            console.warn('Autoplay bloqueado:', e);
          });
 
       document.removeEventListener('touchstart', activarAudio);
@@ -84,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    }
 
-   // Iniciar experiencia con fade
+   // Iniciar experiencia con fade y AOS
    const overlay = document.getElementById('inicio-overlay');
    const iniciarBtn = document.getElementById('iniciar-btn');
 
@@ -93,14 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
 
-      // Activa el scroll por si estaba bloqueado
-      document.body.style.overflow = 'auto';
-
       setTimeout(() => {
          overlay.style.display = 'none';
 
-         // Refresca AOS para que se activen animaciones
-         AOS.refreshHard();
+         // Reparar scroll por si algo lo bloqueó
+         document.documentElement.style.overflow = 'auto';
+         document.body.style.overflow = 'auto';
+
+         // Reiniciar AOS
+         if (typeof AOS !== 'undefined') {
+            AOS.refreshHard();
+         }
       }, 800);
    });
 });
