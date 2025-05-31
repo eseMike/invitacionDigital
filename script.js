@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
    const contador = document.getElementById('contador');
-
-   // Fecha objetivo: 28 de junio de 2025 a las 14:00 hrs
    const fechaBoda = new Date('2025-06-28T14:00:00').getTime();
 
    const actualizarContador = () => {
@@ -23,42 +21,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
    actualizarContador();
    setInterval(actualizarContador, 1000);
+});
 
-   // Mostrar loader
-   window.addEventListener('load', () => {
-      setTimeout(() => {
-         document.body.classList.add('loaded');
-      }, 1500);
-   });
+// Mostrar loader
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 1500);
+});
 
-   // Control manual de música
-   const audio = document.getElementById('audio');
-   const audioBtn = document.getElementById('audio-control');
 
-   audioBtn.addEventListener('click', () => {
-      if (audio.paused) {
-         audio.play();
-         audioBtn.textContent = '⏸️';
-      } else {
-         audio.pause();
-         audioBtn.textContent = '▶️';
-      }
-   });
+// Control de audio
+const audio = document.querySelector('audio');
+const audioBtn = document.getElementById('audio-control');
 
-   // Slider galería
-   const prevBtn = document.querySelector('.slider-btn.prev');
-   const nextBtn = document.querySelector('.slider-btn.next');
-   const slider = document.querySelector('.slider-fotos');
+audioBtn.addEventListener('click', () => {
+   if (audio.paused) {
+      audio.play();
+      audioBtn.textContent = '⏸️';
+   } else {
+      audio.pause();
+      audioBtn.textContent = '▶️';
+   }
+});
 
-   prevBtn?.addEventListener('click', () => {
+// Slider galería
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+const slider = document.querySelector('.slider-fotos');
+
+if (prevBtn && nextBtn && slider) {
+   prevBtn.addEventListener('click', () => {
       slider.scrollBy({left: -300, behavior: 'smooth'});
    });
 
-   nextBtn?.addEventListener('click', () => {
+   nextBtn.addEventListener('click', () => {
       slider.scrollBy({left: 300, behavior: 'smooth'});
    });
+}
 
-   // Activar audio con primer toque
+// Activar audio al primer toque o clic
+document.addEventListener('DOMContentLoaded', function () {
+   const audio = document.getElementById('audio');
    const mensajeMusica = document.getElementById('mensaje-musica');
 
    const activarAudio = () => {
@@ -82,26 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
    document.addEventListener('click', activarAudio);
 });
 
-// Activar música desde el botón "Iniciar experiencia"
-document.addEventListener('DOMContentLoaded', function () {
-   const overlay = document.getElementById('inicio-overlay');
-   const iniciarBtn = document.getElementById('iniciar-btn');
-   const audio = document.getElementById('audio');
-   const mensajeMusica = document.getElementById('mensaje-musica');
+// Iniciar experiencia y lanzar AOS después
+const iniciarBtn = document.getElementById('iniciar-btn');
+if (iniciarBtn) {
+   iniciarBtn.addEventListener('click', () => {
+      const overlay = document.getElementById('inicio-overlay');
+      if (overlay) overlay.style.display = 'none';
 
-   iniciarBtn.addEventListener('click', function () {
-      audio
-         .play()
-         .then(() => {
-            mensajeMusica.style.opacity = '1';
-            setTimeout(() => {
-               mensajeMusica.style.opacity = '0';
-            }, 2500);
-         })
-         .catch((err) => {
-            console.warn('Error al reproducir audio:', err);
-         });
-
-      overlay.style.display = 'none'; // Oculta el overlay
+      // 👉 AOS se inicia aquí
+      AOS.init({
+         duration: 1500,
+         once: true,
+      });
    });
-});
+}
