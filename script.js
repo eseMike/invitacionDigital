@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
    actualizarContador();
    setInterval(actualizarContador, 1000);
 
-   // Mostrar loader y eliminarlo del DOM después
+   // Mostrar loader
    window.addEventListener('load', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
          overlay.style.display = 'none';
+
+         // AOS se inicializa aquí después del fade
+         AOS.init({
+            duration: 1000,
+            once: true,
+         });
+
          AOS.refreshHard();
       }, 800);
    });
