@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
    actualizarContador();
    setInterval(actualizarContador, 1000);
 
-   // Mostrar loader y eliminarlo del DOM
+   // Mostrar loader y eliminarlo del DOM después
    window.addEventListener('load', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
    });
 
-   // Control de audio
+   // Audio
    const audio = document.getElementById('audio');
    const audioBtn = document.getElementById('audio-control');
    const mensajeMusica = document.getElementById('mensaje-musica');
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    });
 
+   // Activar audio al primer toque
    const activarAudio = () => {
       audio
          .play()
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2500);
          })
          .catch((e) => {
-            console.warn('Autoplay bloqueado:', e);
+            console.warn('Autoplay bloqueado por el navegador:', e);
          });
 
       document.removeEventListener('touchstart', activarAudio);
@@ -82,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    }
 
-   // Iniciar experiencia con fade y AOS
+   // Iniciar experiencia con fade y lanzar AOS
    const overlay = document.getElementById('inicio-overlay');
    const iniciarBtn = document.getElementById('iniciar-btn');
 
@@ -93,15 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
          overlay.style.display = 'none';
-
-         // Reparar scroll por si algo lo bloqueó
-         document.documentElement.style.overflow = 'auto';
-         document.body.style.overflow = 'auto';
-
-         // Reiniciar AOS
-         if (typeof AOS !== 'undefined') {
-            AOS.refreshHard();
-         }
+         AOS.refreshHard();
       }, 800);
    });
 });
