@@ -86,14 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
    const iniciarBtn = document.getElementById('iniciar-btn');
 
    iniciarBtn.addEventListener('click', () => {
-      // Desaparece overlay con transición suave
+      // Desaparece el overlay visual y funcionalmente
       overlay.style.transition = 'opacity 0.8s ease';
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
 
-      // Esperamos a que el overlay termine su animación
+      // Luego lo ocultamos completamente del DOM visual
       setTimeout(() => {
-         // Reinicializa AOS para que se apliquen las animaciones visibles ahora
+         overlay.style.display = 'none';
+
+         // Y lanzamos las animaciones AOS
          AOS.refreshHard();
       }, 800);
    });
