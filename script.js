@@ -23,11 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
    actualizarContador();
    setInterval(actualizarContador, 1000);
 
-   // Mostrar loader
+   // Mostrar loader y eliminarlo del DOM después
    window.addEventListener('load', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
-      }, 1500);
+
+         // Elimina el loader después de la transición
+         const loader = document.getElementById('loader');
+         if (loader) loader.remove();
+      }, 1500); // Duración del loader (ajusta si usas otro tiempo)
    });
 
    // Audio
