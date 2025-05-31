@@ -31,7 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
          // Elimina el loader después de la transición
          const loader = document.getElementById('loader');
          if (loader) loader.remove();
-      }, 1500); // Duración del loader (ajusta si usas otro tiempo)
+
+         // Asegura que los elementos se vean
+         document.querySelectorAll('section').forEach((el) => {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+         });
+
+         // Por si algo carga lento, lanza AOS
+         AOS.refreshHard();
+      }, 1500);
    });
 
    // Audio
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
    document.addEventListener('touchstart', activarAudio);
    document.addEventListener('click', activarAudio);
 
-   // Slider
+   // Slider galería
    const prevBtn = document.querySelector('.slider-btn.prev');
    const nextBtn = document.querySelector('.slider-btn.next');
    const slider = document.querySelector('.slider-fotos');
@@ -98,6 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Luego lo ocultamos completamente del DOM visual
       setTimeout(() => {
          overlay.style.display = 'none';
+
+         // Refrescamos visibilidad por si alguna sección sigue invisible
+         document.querySelectorAll('section').forEach((el) => {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+         });
 
          // Y lanzamos las animaciones AOS
          AOS.refreshHard();
