@@ -528,4 +528,9 @@ body.loaded #loader {
 .marco-rustico::after {
   bottom: 0;
   right: 0;
+}
+
+.corazon-verde {
+  color: #3cb371;
+  font-size: 1.8rem;
 }/*# sourceMappingURL=styles.css.map */

@@ -568,3 +568,11 @@ body.loaded #loader {
    bottom: 0;
    right: 0;
 }
+
+$verdeCorazon: #3cb371;
+
+.corazon-verde {
+   color: $verdeCorazon;
+   font-size: 1.8rem; // Puedes ajustar el tamaño según cómo se vea mejor
+   // vertical-align: middle; // Opcional para que no se vea desalineado con el texto
+}

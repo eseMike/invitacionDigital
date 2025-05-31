@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
    // Mostrar loader
    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
+      setTimeout(() => {
+         document.body.classList.add('loaded');
+      }, 1500);
    });
 
    // Control manual de música
