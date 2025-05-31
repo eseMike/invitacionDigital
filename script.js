@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
    actualizarContador();
    setInterval(actualizarContador, 1000);
 
-   // Mostrar loader
+   // Mostrar loader y eliminarlo del DOM después
    window.addEventListener('load', () => {
       setTimeout(() => {
          document.body.classList.add('loaded');
+
          const loader = document.getElementById('loader');
          if (loader) loader.remove();
       }, 1500);
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    });
 
-   // Activar audio al primer toque
+   // Activar audio en primer toque
    const activarAudio = () => {
       audio
          .play()
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
    document.addEventListener('touchstart', activarAudio);
    document.addEventListener('click', activarAudio);
 
-   // Slider galería
+   // Slider
    const prevBtn = document.querySelector('.slider-btn.prev');
    const nextBtn = document.querySelector('.slider-btn.next');
    const slider = document.querySelector('.slider-fotos');
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    }
 
-   // Iniciar experiencia con fade y lanzar AOS
+   // Iniciar experiencia con fade + lanzar AOS después
    const overlay = document.getElementById('inicio-overlay');
    const iniciarBtn = document.getElementById('iniciar-btn');
 
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
          overlay.style.display = 'none';
 
-         // AOS se inicializa aquí después del fade
+         // 💥 Inicializar AOS solo después de que todo esté listo
          AOS.init({
             duration: 1000,
             once: true,
